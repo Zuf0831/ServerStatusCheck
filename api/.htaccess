@@ -1,0 +1,18 @@
+# Deployed to public_html/api/.htaccess
+
+Options -Indexes
+
+# These are included by other scripts and should never be requested directly.
+<FilesMatch "^(config\.php|config\.example\.php|_bootstrap\.php)$">
+  Require all denied
+</FilesMatch>
+
+# No data files should ever live in here, but if one does, don't serve it.
+<FilesMatch "\.(json|lock|tmp|md)$">
+  Require all denied
+</FilesMatch>
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Robots-Tag "noindex, nofollow"
+</IfModule>

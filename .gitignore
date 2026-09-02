@@ -1,0 +1,18 @@
+node_modules/
+dist/
+
+# Real credentials — never commit. Ship config.example.php instead.
+api/config.php
+
+# Local data written by the PHP dev server.
+serverboard-data/
+*.local
+
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+npm-debug.log*
+
+# Original artifact source, superseded by src/App.jsx — safe to delete.
+codesample
